@@ -62,6 +62,4 @@ const createPhoto = () => {
   };
 };
 
-const similarPhotos = Array.from({length: 25}, createPhoto);
-
 createPhoto();
