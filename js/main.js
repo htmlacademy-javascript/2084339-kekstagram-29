@@ -41,17 +41,6 @@ const getRandomInteger = (a, b) => {
 
 const getRandomArrayElement = (elements) => elements[getRandomInteger(0, elements.length - 1)];
 
-const createPhoto = () => {
-  const randomPhotoID = getRandomInteger(0, photoIdNumber.length - 1);
-  return {
-    id: getRandomArrayElement(randomPhotoID),
-    url: '',
-    description: getRandomArrayElement(DESCRIPTIONS),
-    likes: getRandomArrayElement(likes),
-    comments: '',
-  };
-};
-
 const createComment = () => {
   const randomNameIndex = getRandomInteger(0, NAMES.length - 1);
   return {
@@ -62,6 +51,17 @@ const createComment = () => {
   };
 };
 
+const createPhoto = () => {
+  const randomPhotoID = getRandomInteger(0, photoIdNumber.length - 1);
+  return {
+    id: getRandomArrayElement(randomPhotoID),
+    url: '',
+    description: getRandomArrayElement(DESCRIPTIONS),
+    likes: getRandomArrayElement(likes),
+    comments: createComment,
+  };
+};
+
 const similarPhotos = Array.from({length: 25}, createPhoto);
 
-console.log(similarPhotos);
+createPhoto();
