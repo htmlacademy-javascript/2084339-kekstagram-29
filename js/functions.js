@@ -1,10 +1,22 @@
-const checkStringLength = (string, length) => string.length <= length;
+function stringLength(string, maxLength) {
+  if (string.length <= maxLength) {
+    return true;
+  }
+}
 
-checkStringLength('проверяемая строка', 20);
+stringLength('проверяемая строка', 20);
 
-const checkStringPalindrome = (string) => {
-  string = string.toLowerCase().replaceAll(' ', '');
-  return string === string.split('').reverse().join('');
-};
+function stringPalindrome(string) {
+  const normalizedString = string.replaceAll(' ','').toLowerCase();
+  let newString = '';
 
-checkStringPalindrome('топот');
+  for (let i = normalizedString.length - 1; i >= 0; i = i - 1) {
+    newString += normalizedString.at(i).toLowerCase();
+  }
+
+  if (newString === normalizedString) {
+    return true;
+  }
+}
+
+stringPalindrome('Лёша на полке клопа нашёл ');
