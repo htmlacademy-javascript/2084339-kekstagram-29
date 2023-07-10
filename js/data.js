@@ -63,6 +63,5 @@ const createPhoto = (id) => ({
 });
 
 const PhotosArray = () => Array.from({length:PHOTOS_AMOUNT.max}, (_, index)=>createPhoto(index));
-PhotosArray();
 
 export {PhotosArray};
