@@ -1,5 +1,4 @@
-import './data.js';
-import './util.js';
-
 import {PhotosArray} from './data.js';
-PhotosArray();
+import {renderThumbnails} from './thumbnail.js';
+
+renderThumbnails(PhotosArray());
